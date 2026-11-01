@@ -1,0 +1,21 @@
+# Kompilate:
+*.o
+ueb[0-9][0-9]
+ueb[0-9][0-9].exe
+
+# Doxygen-Dokumentationen:
+doc/
+doxygen.log
+
+# Ausgabedateien von Tests:
+test/*/out
+
+# NTFS-Alternate-Data-Stream-Dateien:
+*:Zone.Identifier
+
+# Apple-Desktop-Services-Store-Dateien:
+.DS_Store
+
+
+# Ordner wieder einschließen:
+!ueb[0-9][0-9]/

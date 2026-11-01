@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Skript zum einfacheren Aufrufen von Bats
+#
+# Usage:
+#   runBats DUT [BATS-OPTIONS] TESTS
+#   DUT (device under test)
+#     das zu testende Program
+#   BATS-OPTIONS
+#     zusätzliche Optionen für Bats, siehe Bats Usage
+#   TESTS
+#     Testdatei(-en)
+#
+# Author: aan, avh, mhe, tti
+
+case "$1" in
+    "./"*)
+        DUT="$1"
+        ;;
+    *)
+        DUT="./$1"
+        ;;
+esac
+
+export DUT
+shift
+./test/bats/bin/bats --formatter pretty "$@"
