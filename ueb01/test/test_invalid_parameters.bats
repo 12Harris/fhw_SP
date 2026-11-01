@@ -11,11 +11,11 @@ setup_file() {
 }
 
 setup() {
-    # zusaetzliche asserts laden
-    load 'test_helper/bats-support/load'
-    load 'test_helper/bats-assert/load'
+    local dir
+    dir="$(cd "$(dirname "$BATS_TEST_FILENAME")" && pwd)"
+    load "$dir/test_helper/bats-support/load"
+    load "$dir/test_helper/bats-assert/load"
 }
-
 teardown() {
     # Ausgabe des Aufrufs bei fehlgeschlagenen Testfaellen
     echo "Aufruf: $BATS_RUN_COMMAND"
