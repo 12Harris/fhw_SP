@@ -11,10 +11,9 @@ setup_file() {
 }
 
 setup() {
-    local dir
-    dir="$(cd "$(dirname "$BATS_TEST_FILENAME")" && pwd)"
-    load "$dir/test_helper/bats-support/load"
-    load "$dir/test_helper/bats-assert/load"
+    # zusaetzliche asserts laden
+    load 'test_helper/bats-support/load'
+    load 'test_helper/bats-assert/load'
 }
 
 teardown() {
